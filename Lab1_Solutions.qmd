@@ -1,0 +1,34 @@
+---
+title: "Lab 01 - Redux"
+format: html
+author: Ted Galanthay
+editor: visual
+---
+
+## Loading packages
+
+```{r}
+library(tidyverse) 
+library(datasauRus)
+```
+
+## Answering questions
+
+1.  Datasaurus Dozen hase 1846 rows and 3 variables.
+
+Let's make a frequency table:
+
+```{r}
+datasaurus_dozen %>%
+  count(dataset) %>%
+  print(13)
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
