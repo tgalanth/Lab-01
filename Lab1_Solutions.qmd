@@ -3,6 +3,8 @@ title: "Lab 01 - Redux"
 format: html
 author: Ted Galanthay
 editor: visual
+fig-width: 7
+fig-height: 5
 ---
 
 ## Loading packages
@@ -77,3 +79,23 @@ dino_data %>% summarize(r = cor(x, y))
 ```
 
 4.  The correlation coefficient for the circle data is slightly less, -0.06834336, than that for the dinosaur data, -0.6447185.
+
+Let's plot all datasets at once:
+
+```{r}
+ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset))+
+  geom_point()+
+  facet_wrap(~ dataset, ncol = 3) +
+  theme(legend.position = "none")
+```
+
+And we can get the correlation coefficients for all the data by grouping, using group_by():
+
+```{r}
+datasaurus_dozen %>%
+  group_by(dataset) %>%
+  summarize(r = cor(x, y)) %>%
+  print(13)
+```
+
+We can change the figure width and height by adding to the YAML at the top of our Quarto document.
