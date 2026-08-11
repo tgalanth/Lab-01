@@ -45,3 +45,18 @@ Let's look at the correlation coefficient.
 ```{r}
 dino_data %>% summarize(r = cor(x, y))
 ```
+
+Now we'll look at the star dataset.
+
+```{r}
+dino_data <- datasaurus_dozen %>%
+  filter(dataset == "star")
+ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
+  geom_point()
+```
+
+```{r}
+dino_data %>% summarize(r = cor(x, y))
+```
+
+3.  The correlation coefficient for the star data is slightly larger (-0.0629611 versus -0.6447185) than for the dinosaur data.
