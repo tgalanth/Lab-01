@@ -24,11 +24,24 @@ datasaurus_dozen %>%
   print(13)
 ```
 
-You can add options to executable code like this
+Let's plot the dino dataset. First, we copy the data into dino_data.
 
 ```{r}
-#| echo: false
-2 * 2
+dino_data <- datasaurus_dozen %>%
+  filter(dataset == "dino")
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
+Then, we plot it.
+
+```{r}
+ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
+  geom_point()
+```
+
+ROAR!!
+
+Let's look at the correlation coefficient.
+
+```{r}
+dino_data %>% summarize(r = cor(x, y))
+```
