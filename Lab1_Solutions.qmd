@@ -16,7 +16,7 @@ library(datasauRus)
 
 ## Answering questions
 
-1.  Datasaurus Dozen hase 1846 rows and 3 variables.
+1.  Datasaurus Dozen has 1846 rows and 3 variables.
 
 Let's make a frequency table:
 
